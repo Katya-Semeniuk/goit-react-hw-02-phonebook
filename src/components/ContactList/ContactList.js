@@ -7,7 +7,6 @@ const ContactList = () => {
             <ul className="list">
                 <li></li>
             </ul>
-        
         )
 }
 
