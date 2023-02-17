@@ -3,7 +3,7 @@ import './ContactList.css';
 
 
 const ContactList = () => {
-    rerurn(
+    return(
             <ul className="list">
                 <li></li>
             </ul>
