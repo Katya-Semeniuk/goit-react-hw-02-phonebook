@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid';
+
 import React, { Component } from "react";
 import './ContactForm.css';
 
@@ -9,21 +9,16 @@ class ContactForm extends Component{
   name: '',
   number: '',
   }
-  idInputName = nanoid();
-  idInputTel= nanoid();
+ 
+ 
   
   handleInputChange = event => {
-    console.log(event.currentTarget);
-     console.log(event.currentTarget.name);
-    console.log(event.currentTarget.value);
-
     const { name, value } = event.currentTarget;
     this.setState({ [name]: value})};
 
+  
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state)
-    console.log('submit')
 
     this.props.onSubmit(this.state);
     this.reset();
@@ -38,27 +33,28 @@ class ContactForm extends Component{
      const { name, number } = this.state;
     return (
       <form onSubmit={this.handleSubmit} className="form">
-
-        <label htmlFor={this.idInputName}>
+<div className="group">
+        <label className="label">
         Name
           <input
         onChange={this.handleInputChange}
-        value={name}
-        id={this.idInputName}
-            className="input"
-            name="name"
+         value={name}
+        name="name"
+        className="input"
         type="text"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
         </label>
+        </div>
 
-        <label htmlFor={this.idInputTel}>
+<div className="group">
+        <label className="label">
           Number
-          <input
+            <input
+      onChange={this.handleInputChange}
       value={number}
-      id={this.idInputTel}
       name="number"
       type="tel"
       pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -66,6 +62,7 @@ class ContactForm extends Component{
       required
       />
         </label>
+  </div>
         <button type="submit" className="btn_add">Add contact</button>
       </form>
       
