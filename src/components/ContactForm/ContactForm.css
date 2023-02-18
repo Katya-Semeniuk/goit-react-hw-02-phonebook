@@ -24,11 +24,13 @@
   font-weight: lighter;
 }
 
-.group input:focus {
+.group input:focus,
+.group input:hover {
   box-shadow: 0 0 0 1px hsl(200, 100%, 50%);
 }
 .btn_add {
-  margin-top: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   margin-left: auto;
   margin-right: auto;
   font-size: 20px;
@@ -37,7 +39,6 @@
   height: 35px;
   color: white;
   background-color: hsl(205, 80%, 50%, 0.4);
-  /* background-color: hsl(200, 100%, 50%, 0.25); */
   border: 1px solid hsl(200, 100%, 50%);
   border-radius: 0.25em;
   outline: none;

@@ -4,13 +4,11 @@ import './ContactForm.css';
 
 
 class ContactForm extends Component{
-
   state = {
   name: '',
   number: '',
   }
- 
- 
+
   
   handleInputChange = event => {
     const { name, value } = event.currentTarget;
@@ -69,7 +67,7 @@ class ContactForm extends Component{
      
     )
   }
-}
+};
  
 
 export default ContactForm;
