@@ -1,6 +1,6 @@
 import React from "react";
 import './ContactList.css';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 
 const ContactList = ({ arrayContact, onDeleteContact }) => {
@@ -22,13 +22,13 @@ const ContactList = ({ arrayContact, onDeleteContact }) => {
 }
 
 
-// ContactList.propTypes = {
-//     arrayContact:PropTypes.arrayOf(PropTypes.shape({
-//     id: PropTypes.string.isRequired,
-//     name: PropTypes.string.isRequired,
-//     number: PropTypes.number.isRequired,
-    
-//   })),
-// }
+ContactList.propTypes = {
+   arrayContact:PropTypes.arrayOf(PropTypes.shape({
+    id:  PropTypes.oneOfType([ PropTypes.string,PropTypes.number]),
+    name: PropTypes.oneOfType([PropTypes.string,PropTypes.number]),
+    number: PropTypes.oneOfType([PropTypes.string,PropTypes.number]),
+    })),
+}
+
 
 export default ContactList;
